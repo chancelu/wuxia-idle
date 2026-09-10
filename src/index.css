@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: #131009;
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  }
+}
+
+/* ── 水墨武侠主题 ─────────────────────────────────────────── */
+
+.font-brush {
+  font-family: 'Ma Shan Zheng', 'KaiTi', 'STKaiti', '楷体', serif;
+}
+
+.ink-bg {
+  background-color: #131009;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 70% -10%, rgba(201, 160, 99, 0.07), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 15% 110%, rgba(90, 138, 106, 0.06), transparent 70%),
+    radial-gradient(1px 1px at 22% 30%, rgba(230, 220, 200, 0.35) 50%, transparent 51%),
+    radial-gradient(1px 1px at 65% 60%, rgba(230, 220, 200, 0.25) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 85% 20%, rgba(230, 220, 200, 0.3) 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 85%, rgba(230, 220, 200, 0.2) 50%, transparent 51%);
+}
+
+.ink-panel {
+  background: linear-gradient(160deg, rgba(38, 31, 20, 0.92), rgba(28, 23, 15, 0.92));
+  border: 1px solid rgba(201, 160, 99, 0.22);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(230, 220, 200, 0.05);
+}
+
+.ink-card {
+  background: linear-gradient(150deg, rgba(46, 38, 24, 0.85), rgba(32, 26, 17, 0.9));
+  border: 1px solid rgba(201, 160, 99, 0.18);
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.ink-card:hover:not(:disabled) {
+  border-color: rgba(201, 160, 99, 0.55);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+.ink-card:disabled {
+  opacity: 0.38;
+}
+.ink-card.active {
+  border-color: rgba(212, 80, 74, 0.7);
+  box-shadow: 0 0 18px rgba(212, 80, 74, 0.25);
+}
+
+.ink-btn {
+  background: linear-gradient(150deg, #6b5a38, #4d4028);
+  border: 1px solid rgba(201, 160, 99, 0.4);
+  color: #f0e6d2;
+  transition: filter 0.15s;
+}
+.ink-btn:hover:not(:disabled) { filter: brightness(1.2); }
+.ink-btn:disabled { opacity: 0.4; }
+
+.ink-btn-red {
+  background: linear-gradient(150deg, #a03a34, #722a26);
+  border: 1px solid rgba(212, 80, 74, 0.5);
+  color: #f6e8e6;
+}
+.ink-btn-red:hover:not(:disabled) { filter: brightness(1.2); }
+.ink-btn-red:disabled { opacity: 0.4; }
+
+.ink-btn-green {
+  background: linear-gradient(150deg, #4a7c59, #35573f);
+  border: 1px solid rgba(90, 138, 106, 0.5);
+  color: #e6f0e8;
+}
+.ink-btn-green:hover:not(:disabled) { filter: brightness(1.2); }
+.ink-btn-green:disabled { opacity: 0.4; }
+
+.ink-text-gold { color: #c9a063; }
+.ink-text-red { color: #d4655e; }
+.ink-text-jade { color: #7fb08a; }
+.ink-text-paper { color: #e8dfc9; }
+.ink-text-dim { color: #8d8168; }
+
+.ink-divider { border-color: rgba(201, 160, 99, 0.15); }
+
+.ink-input {
+  background: rgba(19, 16, 9, 0.7);
+  border: 1px solid rgba(201, 160, 99, 0.25);
+  color: #e8dfc9;
+}
+.ink-input::placeholder { color: #6d6350; }
+.ink-input:focus { border-color: rgba(201, 160, 99, 0.6); outline: none; }
+
+.ink-progress {
+  background: rgba(19, 16, 9, 0.8);
+  border: 1px solid rgba(201, 160, 99, 0.2);
+}
+
+/* 朱砂印章 */
+.ink-seal {
+  background: #a03a34;
+  color: #f6e8e6;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
+}
+
+/* 细滚动条 */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(201, 160, 99, 0.25);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
